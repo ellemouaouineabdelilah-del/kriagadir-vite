@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   X,
@@ -16,6 +17,8 @@ import { Button } from '@/components/ui/button';
 import { whatsappNumber, phoneNumber } from '../../data/carsData';
 
 const BookingModal = ({ selectedCar, setSelectedCar, showModal, setShowModal }) => {
+  const { t } = useTranslation();
+
   // Prevent body scroll when modal is open
   useEffect(() => {
     if (showModal) {
@@ -35,7 +38,10 @@ const BookingModal = ({ selectedCar, setSelectedCar, showModal, setShowModal }) 
 
   const handleWhatsAppBooking = () => {
     if (!selectedCar) return;
-    const message = `Bonjour! Je souhaite réserver ${selectedCar.name} (${selectedCar.priceText}). Merci de me contacter pour les détails.`;
+    const message = t('bookingModal.whatsappMessage', {
+      name: selectedCar.name,
+      price: selectedCar.priceText,
+    });
     window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, '_blank');
     handleClose();
   };
@@ -118,7 +124,7 @@ const BookingModal = ({ selectedCar, setSelectedCar, showModal, setShowModal }) 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4 py-4 border-y border-gray-100">
                   <div className="flex items-center gap-2 text-gray-600">
                     <Users className="w-4 h-4 text-orange-500" />
-                    <span className="text-sm">{selectedCar.seats} places</span>
+                    <span className="text-sm">{selectedCar.seats} {t('bookingModal.seats')}</span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-600">
                     <Fuel className="w-4 h-4 text-orange-500" />
@@ -130,24 +136,21 @@ const BookingModal = ({ selectedCar, setSelectedCar, showModal, setShowModal }) 
                   </div>
                   <div className="flex items-center gap-2 text-gray-600">
                     <CheckCircle className="w-4 h-4 text-green-500" />
-                    <span className="text-sm">Assurance incluse</span>
+                    <span className="text-sm">{t('bookingModal.insurance')}</span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-600">
                     <Calendar className="w-4 h-4 text-orange-500" />
-                    <span className="text-sm">Kilométrage illimité</span>
+                    <span className="text-sm">{t('bookingModal.unlimitedMileage')}</span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-600">
                     <MapPin className="w-4 h-4 text-orange-500" />
-                    <span className="text-sm">Livraison disponible</span>
+                    <span className="text-sm">{t('bookingModal.delivery')}</span>
                   </div>
                 </div>
 
                 {/* Description */}
                 <div className="mt-4 text-gray-500 text-sm">
-                  <p>
-                    Profitez de ce véhicule de luxe pour vos déplacements professionnels ou personnels.
-                    Réservation simple et rapide via WhatsApp. Notre équipe vous confirmera la disponibilité.
-                  </p>
+                  <p>{t('bookingModal.description')}</p>
                 </div>
 
                 {/* Action buttons */}
@@ -157,7 +160,7 @@ const BookingModal = ({ selectedCar, setSelectedCar, showModal, setShowModal }) 
                     className="flex-1 bg-green-600 hover:bg-green-700 text-white rounded-full shadow-sm"
                   >
                     <MessageCircle className="w-4 h-4 mr-2" />
-                    Réserver via WhatsApp
+                    {t('bookingModal.whatsappButton')}
                   </Button>
                   <Button
                     variant="outline"
@@ -165,7 +168,7 @@ const BookingModal = ({ selectedCar, setSelectedCar, showModal, setShowModal }) 
                     className="flex-1 border-orange-200 text-orange-600 hover:bg-orange-50 rounded-full"
                   >
                     <Phone className="w-4 h-4 mr-2" />
-                    Appeler maintenant
+                    {t('bookingModal.callButton')}
                   </Button>
                 </div>
               </div>
