@@ -23,5 +23,119 @@
     "rabat": "Rabat",
     "agadir": "Agadir",
     "fes": "Fes"
+  },    
+    "brandsTitle": "Our Partner Brands",
+    "howItWorks": {
+    "badge": "SIMPLE PROCESS",
+    "title": "Book in",
+    "titleHighlight": "3 simple steps",
+    "steps": [
+      {
+        "title": "Choose your car",
+        "description": "Browse our premium fleet and select the ideal vehicle for your needs."
+      },
+      {
+        "title": "Choose your dates",
+        "description": "Indicate pickup and return dates, with full flexibility."
+      },
+      {
+        "title": "WhatsApp confirmation",
+        "description": "Finalize your booking in one click via WhatsApp. Simple and fast."
+      }
+    ],
+    "footer": "No hidden fees • 24/7 support • Free cancellation"
+  } ,
+    "fleet": {
+    "title": "Our Fleet of",
+    "titleHighlight": "Luxury Vehicles",
+    "subtitle": "Discover our exclusive selection of premium cars for all your travels.",
+    "seats": "seats",
+    "bookButton": "Book Now",
+    "callButton": "Call Now",
+    "viewMore": "View more vehicles",
+    "whatsappMessage": "Hello! I would like to rent {{name}} ({{price}})."
+  },
+  "bookingModal": {
+    "seats": "seats",
+    "insurance": "Insurance included",
+    "unlimitedMileage": "Unlimited mileage",
+    "delivery": "Delivery available",
+    "description": "Enjoy this luxury vehicle for your business or personal travel. Simple and fast booking via WhatsApp. Our team will confirm availability.",
+    "whatsappButton": "Book via WhatsApp",
+    "callButton": "Call now",
+    "whatsappMessage": "Hello! I would like to book {{name}} ({{price}}). Please contact me for details."
+  },
+  "contact": {
+    "title": "Contact",
+    "titleHighlight": "Us",
+    "subtitle": "A question? A booking? We're here for you 7/7.",
+    "info": {
+      "title": "Information",
+      "address": "Agadir, Morocco",
+      "addressDetail": "Tourist area, near the beach",
+      "phone": "Phone",
+      "whatsapp": "WhatsApp",
+      "hours": "Opening hours",
+      "hoursWeek": "Monday – Saturday: 9:00 – 19:00",
+      "hoursSunday": "Sunday: closed",
+      "emailTitle": "Professional email",
+      "emailResponse": "Response within 24h max"
+    },
+    "form": {
+      "title": "Send us a message",
+      "subtitle": "Fill out the form, we will reply directly via WhatsApp.",
+      "nameLabel": "Full name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email address",
+      "emailPlaceholder": "your@email.com",
+      "messageLabel": "Your message",
+      "messagePlaceholder": "Details of your request (dates, desired vehicle...)",
+      "submitButton": "Send via WhatsApp",
+      "sending": "Sending...",
+      "footerNote": "We use WhatsApp to respond faster. No data stored."
+    },
+    "errors": {
+      "nameRequired": "Name required",
+      "emailRequired": "Email required",
+      "emailInvalid": "Invalid email",
+      "messageRequired": "Message required"
+    },
+    "whatsappPrefix": "New booking request:",
+    "whatsappName": "Name",
+    "whatsappEmail": "Email",
+    "whatsappMessage": "Message",
+    "toastSuccess": "Message sent!",
+    "toastSuccessDesc": "You will be redirected to WhatsApp. Our team will respond quickly.",
+    "toastError": "Error",
+    "toastErrorDesc": "An error occurred. Please try again."
+  },
+   "footer": {
+    "brand": {
+      "description": "Luxury car rental in Agadir. Premium fleet, personalized service, competitive rates."
+    },
+    "company": {
+      "title": "Company",
+      "about": "About us",
+      "vehicles": "Our vehicles",
+      "howItWorks": "How to book",
+      "contact": "Contact"
+    },
+    "legal": {
+      "title": "Legal information",
+      "terms": "Terms & conditions",
+      "privacy": "Privacy policy",
+      "legalNotice": "Legal notice"
+    },
+    "contact": {
+      "title": "Contact us",
+      "address": "Agadir, Morocco"
+    },
+    "newsletter": {
+      "title": "Receive our offers",
+      "placeholder": "Your email"
+    },
+    "copyright": "© {{year}} Kriagadir – Luxury car rental in Agadir. All rights reserved.",
+    "credit": "Design and development by Kriagadir",
+    "supportWhatsApp": "WhatsApp support"
   }
 }

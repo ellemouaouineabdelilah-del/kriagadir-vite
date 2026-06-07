@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
+import { t } from 'i18next';
 
 const brands = [
   { name: 'ALFA ROMEO', image: '/brands/alfa-romeo-logo.png' },
@@ -26,7 +27,7 @@ const BrandSlider = () => {
   const isInView = useInView(containerRef, { once: false, amount: 0.3 });
 
   // Triple array for seamless loop
-  const duplicatedBrands = [...brands, ...brands, ...brands];
+  const duplicatedBrands = [...brands, ...brands, ...brands, ...brands, ...brands];
 
   useEffect(() => {
     if (isInView) {
@@ -52,7 +53,7 @@ const BrandSlider = () => {
           transition={{ duration: 0.5 }}
           className="text-2xl md:text-3xl font-light tracking-wide text-gray-800"
         >
-          Nos marques partenaires
+          {t('brandsTitle')}
         </motion.h2>
         <div className="w-20 h-px bg-orange-500 mx-auto mt-3" />
       </div>

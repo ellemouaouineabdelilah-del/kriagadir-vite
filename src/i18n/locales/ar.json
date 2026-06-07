@@ -23,5 +23,119 @@
     "rabat": "الرباط",
     "agadir": "أكادير",
     "fes": "فاس"
+  },
+  "brandsTitle": "علاماتنا التجارية الشريكة",
+  "howItWorks": {
+    "badge": "عملية بسيطة",
+    "title": "احجز في",
+    "titleHighlight": "3 خطوات بسيطة",
+    "steps": [
+      {
+        "title": "اختر سيارتك",
+        "description": "تصفح أسطولنا الفاخر واختر السيارة المثالية لاحتياجاتك."
+      },
+      {
+        "title": "اختر تواريخك",
+        "description": "حدد تاريخ الاستلام والإرجاع بمرونة كاملة."
+      },
+      {
+        "title": "تأكيد واتساب",
+        "description": "أكمل حجزك بنقرة واحدة عبر واتساب. بسيط وسريع."
+      }
+    ],
+    "footer": "لا توجد رسوم خفية • دعم 24/7 • إلغاء مجاني"
+  },
+  "fleet": {
+    "title": "أسطولنا من",
+    "titleHighlight": "السيارات الفاخرة",
+    "subtitle": "اكتشف مجموعتنا الحصرية من السيارات الفاخرة لجميع تنقلاتك.",
+    "seats": "مقاعد",
+    "bookButton": "احجز الآن",
+    "callButton": "اتصل الآن",
+    "viewMore": "عرض المزيد من المركبات",
+    "whatsappMessage": "مرحباً! أرغب في استئجار {{name}} ({{price}})."
+  },
+  "bookingModal": {
+    "seats": "مقاعد",
+    "insurance": "التأمين مشمول",
+    "unlimitedMileage": "عدد كيلومترات غير محدود",
+    "delivery": "توصيل متاح",
+    "description": "استمتع بهذه السيارة الفاخرة لرحلات عملك أو الشخصية. حجز بسيط وسريع عبر واتساب. سيقوم فريقنا بتأكيد التوفر.",
+    "whatsappButton": "احجز عبر واتساب",
+    "callButton": "اتصل الآن",
+    "whatsappMessage": "مرحباً! أرغب في حجز {{name}} ({{price}}). يرجى الاتصال بي للتفاصيل."
+  },
+  "contact": {
+    "title": "اتصل",
+    "titleHighlight": "بنا",
+    "subtitle": "سؤال؟ حجز؟ نحن هنا لخدمتك 7/7.",
+    "info": {
+      "title": "معلومات",
+      "address": "أكادير، المغرب",
+      "addressDetail": "منطقة سياحية، قرب الشاطئ",
+      "phone": "الهاتف",
+      "whatsapp": "واتساب",
+      "hours": "ساعات العمل",
+      "hoursWeek": "الإثنين – السبت: 9:00 – 19:00",
+      "hoursSunday": "الأحد: مغلق",
+      "emailTitle": "البريد الإلكتروني المهني",
+      "emailResponse": "الرد خلال 24 ساعة كحد أقصى"
+    },
+    "form": {
+      "title": "أرسل لنا رسالة",
+      "subtitle": "املأ النموذج، وسنرد عليك مباشرة عبر واتساب.",
+      "nameLabel": "الاسم الكامل",
+      "namePlaceholder": "اسمك",
+      "emailLabel": "البريد الإلكتروني",
+      "emailPlaceholder": "your@email.com",
+      "messageLabel": "رسالتك",
+      "messagePlaceholder": "تفاصيل طلبك (التواريخ، السيارة المطلوبة...)",
+      "submitButton": "أرسل عبر واتساب",
+      "sending": "جاري الإرسال...",
+      "footerNote": "نستخدم واتساب للرد بشكل أسرع. لا يتم تخزين أي بيانات."
+    },
+    "errors": {
+      "nameRequired": "الاسم مطلوب",
+      "emailRequired": "البريد الإلكتروني مطلوب",
+      "emailInvalid": "بريد إلكتروني غير صالح",
+      "messageRequired": "الرسالة مطلوبة"
+    },
+    "whatsappPrefix": "طلب حجز جديد:",
+    "whatsappName": "الاسم",
+    "whatsappEmail": "البريد الإلكتروني",
+    "whatsappMessage": "الرسالة",
+    "toastSuccess": "تم إرسال الرسالة!",
+    "toastSuccessDesc": "سيتم إعادة توجيهك إلى واتساب. سيرد فريقنا بسرعة.",
+    "toastError": "خطأ",
+    "toastErrorDesc": "حدث خطأ. الرجاء المحاولة مرة أخرى."
+  },
+  "footer": {
+    "brand": {
+      "description": "تأجير سيارات فاخرة في أكادير. أسطول متميز، خدمة شخصية وأسعار تنافسية."
+    },
+    "company": {
+      "title": "الشركة",
+      "about": "من نحن",
+      "vehicles": "سياراتنا",
+      "howItWorks": "كيف تحجز",
+      "contact": "اتصل بنا"
+    },
+    "legal": {
+      "title": "معلومات قانونية",
+      "terms": "الشروط والأحكام",
+      "privacy": "سياسة الخصوصية",
+      "legalNotice": "إشعار قانوني"
+    },
+    "contact": {
+      "title": "اتصل بنا",
+      "address": "أكادير، المغرب"
+    },
+    "newsletter": {
+      "title": "احصل على عروضنا",
+      "placeholder": "بريدك الإلكتروني"
+    },
+    "copyright": "© {{year}} Kriagadir – تأجير سيارات فاخرة في أكادير. جميع الحقوق محفوظة.",
+    "credit": "تصميم وتطوير Kriagadir",
+    "supportWhatsApp": "دعم واتساب"
   }
 }

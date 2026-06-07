@@ -23,5 +23,119 @@
     "rabat": "Rabat",
     "agadir": "Agadir",
     "fes": "Fès"
+  },
+  "brandsTitle": "Nos marques partenaires",
+  "howItWorks": {
+    "badge": "PROCESSUS SIMPLE",
+    "title": "Réservez en",
+    "titleHighlight": "3 étapes simples",
+    "steps": [
+      {
+        "title": "Choisissez votre voiture",
+        "description": "Parcourez notre flotte premium et sélectionnez le véhicule idéal pour vos besoins."
+      },
+      {
+        "title": "Choisissez vos dates",
+        "description": "Indiquez la date de prise en charge et de retour, en toute flexibilité."
+      },
+      {
+        "title": "Confirmation WhatsApp",
+        "description": "Finalisez votre réservation en un clic via WhatsApp. Simple et rapide."
+      }
+    ],
+    "footer": "Pas de frais cachés • Assistance 24/7 • Annulation gratuite"
+  },
+  "fleet": {
+    "title": "Notre Flotte de",
+    "titleHighlight": "Véhicules de Luxe",
+    "subtitle": "Découvrez notre sélection exclusive de voitures premium pour tous vos déplacements.",
+    "seats": "places",
+    "bookButton": "Réserver",
+    "callButton": "Appeler",
+    "viewMore": "Voir plus de véhicules",
+    "whatsappMessage": "Bonjour ! Je souhaite louer {{name}} ({{price}})."
+  },
+  "bookingModal": {
+    "seats": "places",
+    "insurance": "Assurance incluse",
+    "unlimitedMileage": "Kilométrage illimité",
+    "delivery": "Livraison disponible",
+    "description": "Profitez de ce véhicule de luxe pour vos déplacements professionnels ou personnels. Réservation simple et rapide via WhatsApp. Notre équipe vous confirmera la disponibilité.",
+    "whatsappButton": "Réserver via WhatsApp",
+    "callButton": "Appeler maintenant",
+    "whatsappMessage": "Bonjour ! Je souhaite réserver {{name}} ({{price}}). Merci de me contacter pour les détails."
+  },
+  "contact": {
+    "title": "Contactez-",
+    "titleHighlight": "Nous",
+    "subtitle": "Une question ? Une réservation ? Nous sommes à votre écoute 7j/7.",
+    "info": {
+      "title": "Informations",
+      "address": "Agadir, Maroc",
+      "addressDetail": "Zone touristique, près de la plage",
+      "phone": "Téléphone",
+      "whatsapp": "WhatsApp",
+      "hours": "Horaires d'ouverture",
+      "hoursWeek": "Lundi – Samedi : 9h00 – 19h00",
+      "hoursSunday": "Dimanche : fermé",
+      "emailTitle": "Email professionnel",
+      "emailResponse": "Réponse sous 24h maximum"
+    },
+    "form": {
+      "title": "Envoyez-nous un message",
+      "subtitle": "Remplissez le formulaire, nous vous répondrons directement via WhatsApp.",
+      "nameLabel": "Nom complet",
+      "namePlaceholder": "Votre nom",
+      "emailLabel": "Adresse email",
+      "emailPlaceholder": "votre@email.com",
+      "messageLabel": "Votre message",
+      "messagePlaceholder": "Détails de votre demande (dates, véhicule souhaité...)",
+      "submitButton": "Envoyer sur WhatsApp",
+      "sending": "Envoi en cours...",
+      "footerNote": "Nous utilisons WhatsApp pour vous répondre plus rapidement. Aucune donnée stockée."
+    },
+    "errors": {
+      "nameRequired": "Nom requis",
+      "emailRequired": "Email requis",
+      "emailInvalid": "Email invalide",
+      "messageRequired": "Message requis"
+    },
+    "whatsappPrefix": "Nouvelle demande de réservation :",
+    "whatsappName": "Nom",
+    "whatsappEmail": "Email",
+    "whatsappMessage": "Message",
+    "toastSuccess": "Message envoyé !",
+    "toastSuccessDesc": "Vous allez être redirigé vers WhatsApp. Notre équipe vous répondra rapidement.",
+    "toastError": "Erreur",
+    "toastErrorDesc": "Une erreur s'est produite. Veuillez réessayer."
+  },
+  "footer": {
+    "brand": {
+      "description": "Location de voitures de luxe à Agadir. Flotte premium, service personnalisé et tarifs compétitifs."
+    },
+    "company": {
+      "title": "Entreprise",
+      "about": "À propos",
+      "vehicles": "Nos véhicules",
+      "howItWorks": "Comment réserver",
+      "contact": "Contact"
+    },
+    "legal": {
+      "title": "Informations légales",
+      "terms": "Conditions générales",
+      "privacy": "Politique de confidentialité",
+      "legalNotice": "Mentions légales"
+    },
+    "contact": {
+      "title": "Contactez-nous",
+      "address": "Agadir, Maroc"
+    },
+    "newsletter": {
+      "title": "Recevez nos offres",
+      "placeholder": "Votre email"
+    },
+    "copyright": "© {{year}} Kriagadir – Location de voitures de luxe à Agadir. Tous droits réservés.",
+    "credit": "Design et développement par Kriagadir",
+    "supportWhatsApp": "Support WhatsApp"
   }
 }

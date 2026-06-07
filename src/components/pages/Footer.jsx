@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Car, Phone, Mail, MapPin, Share2, Camera, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -6,26 +7,26 @@ import { Input } from '@/components/ui/input';
 import { whatsappNumber, phoneNumber } from '../../data/carsData';
 
 const Footer = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   const footerLinks = {
     company: [
-      { label: 'À propos', href: '#' },
-      { label: 'Nos véhicules', href: '#fleet' },
-      { label: 'Comment réserver', href: '#' },
-      { label: 'Contact', href: '#contact' },
+      { label: t('footer.company.about'), href: '#' },
+      { label: t('footer.company.vehicles'), href: '#fleet' },
+      { label: t('footer.company.howItWorks'), href: '#' },
+      { label: t('footer.company.contact'), href: '#contact' },
     ],
     legal: [
-      { label: 'Conditions générales', href: '#' },
-      { label: 'Politique de confidentialité', href: '#' },
-      { label: 'Mentions légales', href: '#' },
+      { label: t('footer.legal.terms'), href: '#' },
+      { label: t('footer.legal.privacy'), href: '#' },
+      { label: t('footer.legal.legalNotice'), href: '#' },
     ],
   };
 
   const socialIcons = [
     { icon: Share2, href: '#', label: 'Facebook' },
     { icon: Camera, href: '#', label: 'Instagram' },
-    // { icon: Twitter, href: '#', label: 'Twitter' },
   ];
 
   const containerVariants = {
@@ -55,7 +56,7 @@ const Footer = () => {
               <span className="text-xl font-bold italic">Kriagadir</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Location de voitures de luxe à Agadir. Flotte premium, service personnalisé et tarifs compétitifs.
+              {t('footer.brand.description')}
             </p>
             <div className="flex gap-3 pt-2">
               {socialIcons.map((social, idx) => (
@@ -73,7 +74,7 @@ const Footer = () => {
 
           {/* Company links */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-lg font-semibold mb-4">Entreprise</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.company.title')}</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link, idx) => (
                 <li key={idx}>
@@ -87,7 +88,7 @@ const Footer = () => {
 
           {/* Legal links */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-lg font-semibold mb-4">Informations légales</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('footer.legal.title')}</h3>
             <ul className="space-y-2">
               {footerLinks.legal.map((link, idx) => (
                 <li key={idx}>
@@ -101,7 +102,7 @@ const Footer = () => {
 
           {/* Contact & Newsletter */}
           <motion.div variants={itemVariants} className="space-y-4">
-            <h3 className="text-lg font-semibold mb-2">Contactez-nous</h3>
+            <h3 className="text-lg font-semibold mb-2">{t('footer.contact.title')}</h3>
             <div className="space-y-2 text-gray-400 text-sm">
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4 text-orange-500" />
@@ -113,15 +114,15 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4 text-orange-500" />
-                <span>Agadir, Maroc</span>
+                <span>{t('footer.contact.address')}</span>
               </div>
             </div>
             <div className="pt-2">
-              <p className="text-xs text-gray-500 mb-2">Recevez nos offres</p>
+              <p className="text-xs text-gray-500 mb-2">{t('footer.newsletter.title')}</p>
               <div className="flex gap-2">
                 <Input
                   type="email"
-                  placeholder="Votre email"
+                  placeholder={t('footer.newsletter.placeholder')}
                   className="bg-gray-800 border-gray-700 text-white text-sm h-9"
                 />
                 <Button size="sm" className="bg-orange-500 hover:bg-orange-600">
@@ -139,10 +140,10 @@ const Footer = () => {
           transition={{ delay: 0.3 }}
           className="border-t border-gray-800 mt-12 pt-6 text-center text-gray-500 text-xs"
         >
-          <p>&copy; {currentYear} Kriagadir – Location de voitures de luxe à Agadir. Tous droits réservés.</p>
+          <p>{t('footer.copyright', { year: currentYear })}</p>
           <p className="mt-1">
-            Design et développement par Kriagadir | 
-            <a href={`https://wa.me/${whatsappNumber}`} className="text-orange-400 hover:underline ml-1">Support WhatsApp</a>
+            {t('footer.credit')} | 
+            <a href={`https://wa.me/${whatsappNumber}`} className="text-orange-400 hover:underline ml-1">{t('footer.supportWhatsApp')}</a>
           </p>
         </motion.div>
       </div>

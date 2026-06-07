@@ -1,33 +1,34 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Search, Calendar, MessageCircle, Sparkles } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
-const steps = [
-  {
-    number: '01',
-    title: 'Choisissez votre voiture',
-    description: 'Parcourez notre flotte premium et sélectionnez le véhicule idéal pour vos besoins.',
-    icon: Search,
-    color: 'from-blue-500 to-cyan-400',
-  },
-  {
-    number: '02',
-    title: 'Choisissez vos dates',
-    description: 'Indiquez la date de prise en charge et de retour, en toute flexibilité.',
-    icon: Calendar,
-    color: 'from-orange-500 to-red-400',
-  },
-  {
-    number: '03',
-    title: 'Confirmation WhatsApp',
-    description: 'Finalisez votre réservation en un clic via WhatsApp. Simple et rapide.',
-    icon: MessageCircle,
-    color: 'from-green-500 to-emerald-400',
-  },
-];
-
 const HowItWorks = () => {
+  const { t } = useTranslation();
+
+  // Steps with translation keys
+  const steps = [
+    {
+      number: '01',
+      titleKey: 'howItWorks.steps.0.title',
+      descKey: 'howItWorks.steps.0.description',
+      icon: Search,
+    },
+    {
+      number: '02',
+      titleKey: 'howItWorks.steps.1.title',
+      descKey: 'howItWorks.steps.1.description',
+      icon: Calendar,
+    },
+    {
+      number: '03',
+      titleKey: 'howItWorks.steps.2.title',
+      descKey: 'howItWorks.steps.2.description',
+      icon: MessageCircle,
+    },
+  ];
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -64,7 +65,7 @@ const HowItWorks = () => {
           >
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-semibold tracking-wide">
               <Sparkles className="w-3 h-3" />
-              PROCESSUS SIMPLE
+              {t('howItWorks.badge')}
             </span>
           </motion.div>
           <motion.h2
@@ -73,9 +74,9 @@ const HowItWorks = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 mt-4"
           >
-            Réservez en{' '}
+            {t('howItWorks.title')}{' '}
             <span className="bg-gradient-to-r from-orange-500 to-orange-700 bg-clip-text text-transparent">
-              3 étapes simples
+              {t('howItWorks.titleHighlight')}
             </span>
           </motion.h2>
           <motion.div
@@ -119,10 +120,10 @@ const HowItWorks = () => {
                         </div>
                       </div>
                       <h3 className="mt-6 text-xl md:text-2xl font-bold text-gray-800">
-                        {step.title}
+                        {t(step.titleKey)}
                       </h3>
                       <p className="mt-3 text-gray-500 text-sm md:text-base leading-relaxed">
-                        {step.description}
+                        {t(step.descKey)}
                       </p>
                       {/* Decorative underline on hover */}
                       <div className="mt-4 w-12 h-0.5 bg-orange-300 rounded-full group-hover:w-16 transition-all duration-300" />
@@ -142,7 +143,7 @@ const HowItWorks = () => {
           className="text-center mt-16"
         >
           <p className="text-gray-500 text-sm">
-            Pas de frais cachés • Assistance 24/7 • Annulation gratuite
+            {t('howItWorks.footer')}
           </p>
         </motion.div>
       </div>
