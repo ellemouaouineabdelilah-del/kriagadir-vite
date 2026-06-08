@@ -2,7 +2,7 @@
   "home": "الرئيسية",
   "vehicles": "المركبات",
   "ourCars": "سياراتنا",
-  "contact": "اتصل بنا",
+  "contactSection": "اتصل بنا",
   "shortTerm": "إيجار قصير",
   "longTerm": "إيجار طويل",
   "exclusive": "حصرية",
@@ -131,7 +131,7 @@
       "address": "أكادير، المغرب"
     },
     "newsletter": {
-      "title": "احصل على عروضنا",
+      "title": "احصل على عروضنا",   
       "placeholder": "بريدك الإلكتروني"
     },
     "copyright": "© {{year}} Kriagadir – تأجير سيارات فاخرة في أكادير. جميع الحقوق محفوظة.",
