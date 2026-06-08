@@ -11,6 +11,7 @@ import {
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { vehicles, whatsappNumber, phoneNumber } from '../../data/carsData';
+import { Link } from 'react-router-dom';
 
 const FleetSection = ({ setSelectedCar, setShowModal }) => {
   const { t } = useTranslation();
@@ -108,38 +109,14 @@ const FleetSection = ({ setSelectedCar, setShowModal }) => {
                   </div>
                 </CardContent>
 
-                <CardFooter className="flex flex-col sm:flex-row gap-3 pt-0 pb-5 px-5">
-                  <Button
-                    onClick={() => {
-                      setSelectedCar(car);
-                      setShowModal(true);
-                    }}
-                    className="flex-1 bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-sm transition-all duration-200 border-0"
-                  >
-                    <Car className="w-4 h-4 mr-2" />
-                    {t('fleet.bookButton')}
-                  </Button>
-                  <div className="flex gap-2">
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      onClick={() => handleWhatsApp(car)}
-                      className="rounded-full border-0 bg-green-50 text-green-600 hover:bg-green-100 hover:text-green-700 shadow-sm"
-                      title="WhatsApp"
-                    >
-                      <MessageCircle className="w-4 h-4" />
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      onClick={handleCallNow}
-                      className="rounded-full border-0 bg-orange-50 text-orange-600 hover:bg-orange-100 hover:text-orange-700 shadow-sm"
-                      title={t('fleet.callButton')}
-                    >
-                      <Phone className="w-4 h-4" />
-                    </Button>
-                  </div>
-                </CardFooter>
+                <CardFooter className="py-4 px-5">
+  <Link to={`/car/${car.id}`} className="w-full">
+    <Button className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-full shadow-sm transition-all duration-200">
+      <Car className="w-4 h-4 mr-2" />
+      {t('fleet.bookButton')}
+    </Button>
+  </Link>
+</CardFooter>
               </Card>
             </motion.div>
           ))}
