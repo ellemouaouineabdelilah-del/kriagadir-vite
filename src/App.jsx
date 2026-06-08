@@ -10,6 +10,10 @@ import ContactSection from "./components/pages/ContactSection";
 import { Toaster } from "sonner";
 import WhatsAppWidget from "./components/pages/WhatsAppWidget";
 import Footer from "./components/pages/Footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Reservation from "./components/pages/Reservation";
+import CarDetail from "./components/pages/CarDetail";
+import CarsPage from "./components/pages/CarsPage";
 
 function App() {
   const [selectedCar, setSelectedCar] = useState(null);
@@ -17,29 +21,43 @@ function App() {
   const [showChatWidget, setShowChatWidget] = useState(false); 
 
   return (
-    <div className="App">
-      <Navbar />
-      <Hero />
-      <BrandSlider />
-      <HowItWorks />
-      <FleetSection
-        setSelectedCar={setSelectedCar}
-        setShowModal={setShowModal}
-      />
-      <BookingModal 
-        selectedCar={selectedCar}
-        setSelectedCar={setSelectedCar}
-        showModal={showModal}
-        setShowModal={setShowModal}
-      />
-      <ContactSection />
-      <WhatsAppWidget 
-        showChatWidget={showChatWidget} 
-        setShowChatWidget={setShowChatWidget} 
-      />
-      <Footer />
-      <Toaster richColors position="top-right" />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={
+            <>
+              {/* Important: add the id wrappers for scrollTo to work */}
+              <div id="home"><Hero /></div>
+              <BrandSlider />
+              <HowItWorks />
+              <div id="fleet">
+                <FleetSection 
+                  setSelectedCar={setSelectedCar} 
+                  setShowModal={setShowModal} 
+                />
+              </div>
+              <BookingModal 
+                selectedCar={selectedCar}
+                setSelectedCar={setSelectedCar}
+                showModal={showModal}
+                setShowModal={setShowModal}
+              />
+              <div id="contact"><ContactSection /></div>
+              <WhatsAppWidget 
+                showChatWidget={showChatWidget} 
+                setShowChatWidget={setShowChatWidget} 
+              />
+              <Footer />
+            </>
+          } />
+          <Route path="/reservation" element={<Reservation />} />
+          <Route path="/car/:id" element={<CarDetail />} />
+          <Route path="/cars" element={<CarsPage />} />
+        </Routes>
+        <Toaster richColors position="top-right" />
+      </div>
+    </BrowserRouter>
   );
 }
 
