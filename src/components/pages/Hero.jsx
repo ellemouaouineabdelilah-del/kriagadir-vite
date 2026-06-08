@@ -23,10 +23,12 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { whatsappNumber } from "../../data/carsData";
+import { useNavigate } from "react-router-dom";
 
 
 function Hero() {
   const { t, i18n  } = useTranslation();
+  const navigate = useNavigate();
    const currentLang = i18n.language;
   const [selectedCity, setSelectedCity] = useState("");
   const [pickupDate, setPickupDate] = useState(null);
@@ -54,18 +56,18 @@ function Hero() {
     { key: "exclusive", label: t("exclusive") },
   ];
 
-  const handleSearch = () => {
-    const pickup = pickupDate ? format(pickupDate, "PPP") : "?";
-    const dropoff = dropoffDate ? format(dropoffDate, "PPP") : "?";
-    const message = t("whatsappMessage", {
-      city: selectedCity ? t(`cities.${selectedCity}`) : t("cityNotSelected"),
-      duration: `${pickup} → ${dropoff}`,
-    });
-    window.open(
-      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
-      "_blank",
-    );
-  };
+  // const handleSearch = () => {
+  //   const pickup = pickupDate ? format(pickupDate, "PPP") : "?";
+  //   const dropoff = dropoffDate ? format(dropoffDate, "PPP") : "?";
+  //   const message = t("whatsappMessage", {
+  //     city: selectedCity ? t(`cities.${selectedCity}`) : t("cityNotSelected"),
+  //     duration: `${pickup} → ${dropoff}`,
+  //   });
+  //   window.open(
+  //     `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
+  //     "_blank",
+  //   );
+  // };
 
   useEffect(() => {
     const img = new Image();
@@ -73,8 +75,28 @@ function Hero() {
     img.onload = () => setImageLoaded(true);
   }, []);
 
+  const handleSearch = () => {
+    // Basic validation: both dates must be selected
+    if (!pickupDate || !dropoffDate) {
+      // Optionally show a toast or alert
+      alert(t("pleaseSelectDates"));
+      return;
+    }
+
+    // Navigate to the cars page with search parameters
+    navigate("/cars", {
+      state: {
+        city: selectedCity,
+        pickupDate: pickupDate.toISOString(),
+        dropoffDate: dropoffDate.toISOString(),
+        activeTab,      // you can use this later to filter car categories
+      },
+    });
+  };
+
   return (
     <section
+      id="hero"
       className="relative min-h-screen flex flex-col justify-between bg-cover bg-center bg-no-repeat overflow-hidden"
       style={{
         backgroundImage: imageLoaded ? "url('/hero-bg.webp')" : "none",
