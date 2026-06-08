@@ -134,11 +134,7 @@ function Hero() {
               <Button
                 variant="ghost"
                 className="group relative overflow-hidden rounded-full bg-white/10 backdrop-blur-md px-6 py-4 text-sm font-medium text-white shadow-lg transition-all duration-300 hover:bg-white/20 hover:shadow-xl focus:outline-none focus:ring-0"
-                onClick={() =>
-                  document
-                    .getElementById("fleet")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
+                 onClick={() => navigate('/about')}
               >
                 <span className="relative z-10 flex items-center gap-2">
                   {t("moreInfo")}
