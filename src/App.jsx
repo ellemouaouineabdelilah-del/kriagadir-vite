@@ -4,7 +4,6 @@ import BrandSlider from "./components/pages/BrandSlider";
 import FleetSection from "./components/pages/FleetSection";
 import Hero from "./components/pages/Hero";
 import HowItWorks from "./components/pages/HowItWorks";
-import Navbar from "./components/pages/Navbar";
 import BookingModal from "./components/pages/BookingModal";
 import ContactSection from "./components/pages/ContactSection";
 import { Toaster } from "sonner";
@@ -14,6 +13,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Reservation from "./components/pages/Reservation";
 import CarDetail from "./components/pages/CarDetail";
 import CarsPage from "./components/pages/CarsPage";
+import AboutUs from "./components/pages/AboutUs";
+import Navbar from "./components/pages/Navbar";
 
 function App() {
   const [selectedCar, setSelectedCar] = useState(null);
@@ -53,6 +54,7 @@ function App() {
           } />
           <Route path="/reservation" element={<Reservation />} />
           <Route path="/car/:id" element={<CarDetail />} />
+          <Route path="/about" element={<AboutUs />} />
           <Route path="/cars" element={<CarsPage />} />
         </Routes>
         <Toaster richColors position="top-right" />
