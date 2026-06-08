@@ -49,8 +49,8 @@ function Navbar() {
   const navLinks = [
     { label: t('home'), action: () => scrollTo('home'), icon: Home, description: 'Back to homepage' },
     { label: t('vehicles'), action: () => scrollTo('fleet'), icon: Car, description: 'View our vehicles' },
-    { label: t('ourCars'), action: () => navigate('/cars'), icon: Grid3x3, description: 'Browse all cars' },
-    { label: t('contact'), action: () => scrollTo('contact'), icon: Phone, description: 'Get in touch' },
+    { label: t('reservation'), action: () => navigate('/reservation'), icon: Grid3x3, description: 'Reserve your car' },
+    { label: t('contactSection'), action: () => scrollTo('contact'), icon: Phone, description: 'Get in touch' },
   ];
 
   // Handle scroll effect on navbar background
@@ -119,21 +119,21 @@ function Navbar() {
     };
   }, [desktopDropdownOpen]);
 
-  const scrollTo = (sectionId) => {
-    setMenuOpen(false);
-    setSearchOpen(false);
-    setDesktopDropdownOpen(false);
-    setLangDropdownOpen(false);
-    if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    } else {
-      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
+  // FIXED: Robust scrollTo function with polling and navigation handling
+const scrollTo = (sectionId) => {
+  setMenuOpen(false);
+  setSearchOpen(false);
+  setDesktopDropdownOpen(false);
+  setLangDropdownOpen(false);
+  if (location.pathname !== '/') {
+    navigate('/');
+    setTimeout(() => {
+      window.location.hash = sectionId;
+    }, 200);
+  } else {
+    window.location.hash = sectionId;
+  }
+};
   const currentLang = languages.find(l => l.code === i18n.language);
 
   // Animation variants
@@ -441,7 +441,6 @@ function Navbar() {
           )}
         </AnimatePresence>
       </motion.nav>
-
     </>
   );
 }
