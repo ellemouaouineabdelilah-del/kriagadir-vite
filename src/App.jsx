@@ -15,6 +15,7 @@ import CarDetail from "./components/pages/CarDetail";
 import CarsPage from "./components/pages/CarsPage";
 import AboutUs from "./components/pages/AboutUs";
 import Navbar from "./components/pages/Navbar";
+import NotFound from "./components/pages/NotFound";
 
 function App() {
   const [selectedCar, setSelectedCar] = useState(null);
@@ -56,6 +57,7 @@ function App() {
           <Route path="/car/:id" element={<CarDetail />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/cars" element={<CarsPage />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Toaster richColors position="top-right" />
       </div>
