@@ -22,19 +22,24 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { whatsappNumber } from "../../data/carsData";
 import { useNavigate } from "react-router-dom";
-
+import { toast } from "sonner";
 
 function Hero() {
-  const { t, i18n  } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
-   const currentLang = i18n.language;
+  const currentLang = i18n.language;
   const [selectedCity, setSelectedCity] = useState("");
   const [pickupDate, setPickupDate] = useState(null);
   const [dropoffDate, setDropoffDate] = useState(null);
   const [activeTab, setActiveTab] = useState("short");
   const [imageLoaded, setImageLoaded] = useState(false);
+  
+  // Validation error states
+  const [errors, setErrors] = useState({
+    pickupDate: false,
+    dropoffDate: false,
+  });
 
   // Dynamic spacing based on language
   const topPadding = currentLang === 'ar' ? 'pt-36' : 'pt-24';
@@ -56,19 +61,6 @@ function Hero() {
     { key: "exclusive", label: t("exclusive") },
   ];
 
-  // const handleSearch = () => {
-  //   const pickup = pickupDate ? format(pickupDate, "PPP") : "?";
-  //   const dropoff = dropoffDate ? format(dropoffDate, "PPP") : "?";
-  //   const message = t("whatsappMessage", {
-  //     city: selectedCity ? t(`cities.${selectedCity}`) : t("cityNotSelected"),
-  //     duration: `${pickup} → ${dropoff}`,
-  //   });
-  //   window.open(
-  //     `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
-  //     "_blank",
-  //   );
-  // };
-
   useEffect(() => {
     const img = new Image();
     img.src = "/hero-bg.webp";
@@ -76,22 +68,37 @@ function Hero() {
   }, []);
 
   const handleSearch = () => {
-    // Basic validation: both dates must be selected
+    const newErrors = {
+      pickupDate: !pickupDate,
+      dropoffDate: !dropoffDate,
+    };
+    setErrors(newErrors);
+
     if (!pickupDate || !dropoffDate) {
-      // Optionally show a toast or alert
-      alert(t("pleaseSelectDates"));
+      toast.error(t("pleaseSelectDates") || "Veuillez sélectionner les deux dates.");
       return;
     }
 
-    // Navigate to the cars page with search parameters
+    // Navigate to cars page with search parameters
     navigate("/cars", {
       state: {
         city: selectedCity,
         pickupDate: pickupDate.toISOString(),
         dropoffDate: dropoffDate.toISOString(),
-        activeTab,      // you can use this later to filter car categories
+        activeTab,
       },
     });
+  };
+
+  // Clear error for a field when user interacts
+  const handlePickupDateChange = (date) => {
+    setPickupDate(date);
+    if (errors.pickupDate) setErrors(prev => ({ ...prev, pickupDate: false }));
+  };
+
+  const handleDropoffDateChange = (date) => {
+    setDropoffDate(date);
+    if (errors.dropoffDate) setErrors(prev => ({ ...prev, dropoffDate: false }));
   };
 
   return (
@@ -114,8 +121,8 @@ function Hero() {
       />
 
       <div className={`relative z-10 flex flex-col justify-between h-full min-h-[92vh] ${topPadding} pb-12 md:pb-16`}>
-        {/* Container – same max-w + padding as Navbar */}
         <div className={`flex flex-col ${gapBetween} mt-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full`}>
+          {/* Hero text */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -133,8 +140,8 @@ function Hero() {
             <div className="mt-6">
               <Button
                 variant="ghost"
-                className="group relative overflow-hidden rounded-full bg-white/10 backdrop-blur-md px-6 py-4 text-sm font-medium text-white shadow-lg transition-all duration-300 hover:bg-white/20 hover:shadow-xl focus:outline-none focus:ring-0"
-                 onClick={() => navigate('/about')}
+                className="group relative overflow-hidden rounded-full bg-white/10 backdrop-blur-md px-6 py-4 text-sm font-medium text-white shadow-lg transition-all duration-300 hover:bg-white/20 hover:shadow-xl"
+                onClick={() => navigate('/about')}
               >
                 <span className="relative z-10 flex items-center gap-2">
                   {t("moreInfo")}
@@ -155,12 +162,12 @@ function Hero() {
             </div>
           </motion.div>
 
+          {/* Search form */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            {/* Tabs */}
             <div className="flex gap-4 md:gap-8 mb-4 px-1 overflow-x-auto [&::-webkit-scrollbar]:hidden">
               {tabs.map((tab) => (
                 <button
@@ -177,9 +184,9 @@ function Hero() {
               ))}
             </div>
 
-            {/* Search card */}
             <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl overflow-hidden">
               <div className="flex flex-col md:flex-row">
+                {/* City select - optional to show red, but not required */}
                 <div className="flex-1 flex items-center gap-3 px-5 py-4 border-b md:border-b-0 md:border-r border-gray-200/50">
                   <MapPin className="w-4 h-4 text-gray-500 shrink-0" />
                   <Select value={selectedCity} onValueChange={setSelectedCity}>
@@ -199,24 +206,27 @@ function Hero() {
                   </Select>
                 </div>
 
+                {/* Pickup date - with red border on error */}
                 <div className="flex-1 flex items-center gap-3 px-5 py-4 border-b md:border-b-0 md:border-r border-gray-200/50">
                   <CalendarIcon className="w-4 h-4 text-gray-500 shrink-0" />
                   <Popover>
                     <PopoverTrigger asChild>
                       <Button
                         variant="ghost"
-                        className="w-full justify-start text-left font-normal text-gray-700 hover:bg-transparent p-0 h-auto text-sm"
+                        className={`w-full justify-start text-left font-normal text-gray-700 hover:bg-transparent p-0 h-auto text-sm ${errors.pickupDate ? 'text-red-500' : ''}`}
                       >
-                        {pickupDate
-                          ? format(pickupDate, "PPP")
-                          : t("pickupDate")}
+                        <span className={errors.pickupDate ? 'border-b border-red-500' : ''}>
+                          {pickupDate
+                            ? format(pickupDate, "PPP")
+                            : t("pickupDate")}
+                        </span>
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0" align="start">
                       <Calendar
                         mode="single"
                         selected={pickupDate}
-                        onSelect={setPickupDate}
+                        onSelect={handlePickupDateChange}
                         initialFocus
                         disabled={(date) => date < new Date()}
                       />
@@ -224,24 +234,27 @@ function Hero() {
                   </Popover>
                 </div>
 
+                {/* Dropoff date - with red border on error */}
                 <div className="flex-1 flex items-center gap-3 px-5 py-4 border-b md:border-b-0 border-gray-200/50">
                   <CalendarIcon className="w-4 h-4 text-gray-500 shrink-0" />
                   <Popover>
                     <PopoverTrigger asChild>
                       <Button
                         variant="ghost"
-                        className="w-full justify-start text-left font-normal text-gray-700 hover:bg-transparent p-0 h-auto text-sm"
+                        className={`w-full justify-start text-left font-normal text-gray-700 hover:bg-transparent p-0 h-auto text-sm ${errors.dropoffDate ? 'text-red-500' : ''}`}
                       >
-                        {dropoffDate
-                          ? format(dropoffDate, "PPP")
-                          : t("dropoffDate")}
+                        <span className={errors.dropoffDate ? 'border-b border-red-500' : ''}>
+                          {dropoffDate
+                            ? format(dropoffDate, "PPP")
+                            : t("dropoffDate")}
+                        </span>
                       </Button>
                     </PopoverTrigger>
                     <PopoverContent className="w-auto p-0" align="start">
                       <Calendar
                         mode="single"
                         selected={dropoffDate}
-                        onSelect={setDropoffDate}
+                        onSelect={handleDropoffDateChange}
                         initialFocus
                         disabled={(date) =>
                           pickupDate ? date < pickupDate : date < new Date()
@@ -251,6 +264,7 @@ function Hero() {
                   </Popover>
                 </div>
 
+                {/* Search button */}
                 <motion.div
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
