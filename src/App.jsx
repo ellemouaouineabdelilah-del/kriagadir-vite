@@ -16,14 +16,19 @@ import CarsPage from "./components/pages/CarsPage";
 import AboutUs from "./components/pages/AboutUs";
 import Navbar from "./components/pages/Navbar";
 import NotFound from "./components/pages/NotFound";
+import ScrollToTop from "./utils/ScrollToTop";
+
 
 function App() {
   const [selectedCar, setSelectedCar] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [showChatWidget, setShowChatWidget] = useState(false); 
+  
+  
 
   return (
     <BrowserRouter>
+    <ScrollToTop />
       <div className="App">
         <Navbar />
         <Routes>
