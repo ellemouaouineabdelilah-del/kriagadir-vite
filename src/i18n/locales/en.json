@@ -25,6 +25,13 @@
     "agadir": "Agadir",
     "fes": "Fes"
   },    
+ "notFound": {
+  "title": "Page Not Found",
+  "description": "The page you are looking for does not exist or has been moved.",
+  "home": "Home",
+  "back": "Go Back",
+  "footer": "© 2025 Kriagadir – Premium Car Rental"
+},
   "about": {
     "title": "About",
     "subtitle": "Your trusted premium car rental partner in Morocco",
@@ -162,5 +169,18 @@
     "copyright": "© {{year}} Kriagadir – Luxury car rental in Agadir. All rights reserved.",
     "credit": "Design and development by Kriagadir",
     "supportWhatsApp": "WhatsApp support"
-  }
+  },
+  "carsPage": {
+  "title": "Our Vehicles",
+  "availability": "Available from",
+  "searchPlaceholder": "Search for a vehicle...",
+  "priceRange": "Price per day",
+  "showFilters": "Filters",
+  "hideFilters": "Hide",
+  "reset": "Reset",
+  "vehiclesFound": "vehicles found",
+  "noResults": "No vehicles match your criteria.",
+  "resetFilters": "Reset filters",
+  "viewDetails": "View details"
+}
 }

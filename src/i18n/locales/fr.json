@@ -25,6 +25,13 @@
     "agadir": "Agadir",
     "fes": "Fès"
   },
+ "notFound": {
+  "title": "Page introuvable",
+  "description": "La page que vous cherchez n'existe pas ou a été déplacée.",
+  "home": "Accueil",
+  "back": "Retour",
+  "footer": "© 2025 Kriagadir – Location de voitures premium"
+},
   "about": {
     "title": "À propos",
     "subtitle": "Votre partenaire de confiance pour la location de voitures premium au Maroc",
@@ -162,5 +169,18 @@
     "copyright": "© {{year}} Kriagadir – Location de voitures de luxe à Agadir. Tous droits réservés.",
     "credit": "Design et développement par Kriagadir",
     "supportWhatsApp": "Support WhatsApp"
-  }
+  },
+  "carsPage": {
+  "title": "Nos véhicules",
+  "availability": "Disponibles du",
+  "searchPlaceholder": "Rechercher un véhicule...",
+  "priceRange": "Prix par jour",
+  "showFilters": "Filtres",
+  "hideFilters": "Masquer",
+  "reset": "Réinitialiser",
+  "vehiclesFound": "véhicules trouvés",
+  "noResults": "Aucun véhicule ne correspond à vos critères.",
+  "resetFilters": "Réinitialiser les filtres",
+  "viewDetails": "Voir détails"
+}
 }
