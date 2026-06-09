@@ -21,7 +21,6 @@ function Navbar() {
   const [desktopDropdownOpen, setDesktopDropdownOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
 
-  // Refs
   const desktopMenuRef = useRef(null);
   const desktopButtonRef = useRef(null);
   const searchContainerRef = useRef(null);
@@ -35,7 +34,6 @@ function Navbar() {
     { code: 'ar', name: 'العربية', flag: '🇲🇦' },
   ];
 
-  // ✅ Define scrollTo BEFORE using it in navLinks
   const scrollTo = (sectionId) => {
     setMenuOpen(false);
     setSearchOpen(false);
@@ -51,17 +49,15 @@ function Navbar() {
     }
   };
 
-  // ✅ Now safe to use scrollTo
   const navLinks = getNavLinks(t, scrollTo, navigate);
 
-  // Scroll effect
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Click-outside for desktop dropdown
+  // Click-outside effects (unchanged)
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (desktopDropdownOpen && 
@@ -76,7 +72,6 @@ function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [desktopDropdownOpen]);
 
-  // Click-outside for search bar
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (searchOpen && 
@@ -91,7 +86,6 @@ function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [searchOpen]);
 
-  // Click-outside for language dropdown
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (langDropdownOpen && 
@@ -106,7 +100,6 @@ function Navbar() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [langDropdownOpen]);
 
-  // Prevent body scroll when desktop dropdown is open
   useEffect(() => {
     if (desktopDropdownOpen) {
       document.body.style.overflow = 'hidden';
@@ -117,6 +110,14 @@ function Navbar() {
   }, [desktopDropdownOpen]);
 
   const currentLang = languages.find(l => l.code === i18n.language) || languages[0];
+
+  // Pages where logo should be orange and icons dark (background transparent)
+  const isSpecialPage = ['/about', '/reservation', '/notfound', '/cars'].includes(location.pathname);
+
+  // Logo colour: on special pages → orange; on homepage → white (scrolled becomes orange)
+  const logoOrange = isSpecialPage || scrolled;
+  // Icons/text colour: on special pages → black/dark; on homepage → white (scrolled becomes dark)
+  const useDarkIcons = isSpecialPage || scrolled;
 
   const navVariants = {
     initial: { y: -100, opacity: 0 },
@@ -155,11 +156,14 @@ function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
           
-          <Logo onClick={() => scrollTo('home')} scrolled={scrolled} />
+          <Logo 
+            onClick={() => scrollTo('home')} 
+            isOrange={logoOrange} 
+          />
 
           <div className="flex items-center gap-1">
             {/* Search button */}
-            <div ref={searchButtonRef}>
+            {/* <div ref={searchButtonRef}>
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -168,11 +172,13 @@ function Navbar() {
                   setDesktopDropdownOpen(false);
                   setLangDropdownOpen(false);
                 }}
-                className={`${scrolled ? "text-black/70 hover:text-black" : "text-white/75 hover:text-white"} p-2.5 rounded-full hover:bg-white/10 transition-all`}
+                className={`p-2.5 rounded-full hover:bg-white/10 transition-all ${
+                  useDarkIcons ? 'text-black/70 hover:text-black' : 'text-white/75 hover:text-white'
+                }`}
               >
                 <Search className="w-[18px] h-[18px]" />
               </motion.button>
-            </div>
+            </div> */}
 
             {/* Language Switcher */}
             <LanguageSwitcher
@@ -182,7 +188,7 @@ function Navbar() {
               onToggle={() => setLangDropdownOpen(!langDropdownOpen)}
               buttonRef={langButtonRef}
               contentRef={langContentRef}
-              scrolled={scrolled}
+              useDarkIcons={useDarkIcons}
             />
 
             {/* Desktop Menu Button (hamburger) */}
@@ -193,7 +199,7 @@ function Navbar() {
                 setSearchOpen(false);
                 setLangDropdownOpen(false);
               }}
-              scrolled={scrolled}
+              useDarkIcons={useDarkIcons}
             />
 
             {/* Mobile menu toggle button */}
@@ -211,7 +217,7 @@ function Navbar() {
                     animate={{ rotate: 0, opacity: 1 }}
                     exit={{ rotate: 90, opacity: 0 }}
                   >
-                    <X className="w-[18px] h-[18px] text-white" />
+                    <X className={`w-[18px] h-[18px] ${useDarkIcons ? 'text-black' : 'text-white'}`} />
                   </motion.div>
                 ) : (
                   <motion.div
@@ -220,7 +226,7 @@ function Navbar() {
                     animate={{ rotate: 0, opacity: 1 }}
                     exit={{ rotate: -90, opacity: 0 }}
                   >
-                    <Menu className="w-[18px] h-[18px] text-white" />
+                    <Menu className={`w-[18px] h-[18px] ${useDarkIcons ? 'text-black' : 'text-white'}`} />
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -235,12 +241,12 @@ function Navbar() {
           ref={desktopMenuRef}
         />
 
-        <SearchBar
+        {/* <SearchBar
           isOpen={searchOpen}
           onClose={() => setSearchOpen(false)}
           placeholder={t('search') || 'Search for cars...'}
           containerRef={searchContainerRef}
-        />
+        /> */}
 
         <MobileMenu
           isOpen={menuOpen}

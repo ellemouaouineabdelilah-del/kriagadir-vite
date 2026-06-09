@@ -9,7 +9,7 @@ const mobileMenuVariants = {
 const MobileMenu = ({ isOpen, navLinks, languages, currentLang, onLanguageChange, onClose }) => {
   const getIcon = (iconName) => {
     const Icon = Icons[iconName];
-    return Icon ? <Icon className="w-4 h-4" /> : null;
+    return Icon ? <Icon className="w-4 h-4 text-orange-500" /> : null;
   };
 
   return (
@@ -20,7 +20,7 @@ const MobileMenu = ({ isOpen, navLinks, languages, currentLang, onLanguageChange
           initial="closed"
           animate="open"
           exit="closed"
-          className="md:hidden border-t border-white/10 bg-white/60 backdrop-blur-md"
+          className="md:hidden bg-gray-900/95 backdrop-blur-md border-t border-gray-800 shadow-xl"
         >
           <div className="px-4 py-3 space-y-1">
             {navLinks.map(({ label, action, icon: iconName }, index) => (
@@ -34,7 +34,7 @@ const MobileMenu = ({ isOpen, navLinks, languages, currentLang, onLanguageChange
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.05 }}
                 whileTap={{ scale: 0.98 }}
-                className="flex items-center gap-3 text-white/80 hover:text-white text-sm py-3.5 px-3 w-full text-left border-b border-white/10 last:border-0 transition-all rounded-lg hover:bg-white/10"
+                className="flex items-center gap-3 text-gray-300 hover:text-white text-sm py-3.5 px-3 w-full text-left border-b border-gray-800 last:border-0 transition-all rounded-lg hover:bg-orange-500/10 hover:translate-x-1"
               >
                 {getIcon(iconName)}
                 {label}
@@ -44,7 +44,7 @@ const MobileMenu = ({ isOpen, navLinks, languages, currentLang, onLanguageChange
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="flex gap-2 pt-4 pb-1 flex-wrap"
+              className="flex gap-2 pt-4 pb-1 flex-wrap border-t border-gray-800 mt-2"
             >
               {languages.map(lang => (
                 <motion.button
@@ -57,8 +57,8 @@ const MobileMenu = ({ isOpen, navLinks, languages, currentLang, onLanguageChange
                   }}
                   className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs border transition-all
                     ${currentLang.code === lang.code
-                      ? 'border-white/60 text-white bg-white/10'
-                      : 'border-white/20 text-white/55 hover:border-white/40 hover:text-white'
+                      ? 'border-orange-500 text-white bg-orange-500/20'
+                      : 'border-gray-700 text-gray-400 hover:border-orange-500 hover:text-white'
                     }`}
                 >
                   {lang.flag} {lang.name}
