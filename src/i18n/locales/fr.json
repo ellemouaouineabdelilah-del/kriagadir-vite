@@ -182,5 +182,88 @@
   "noResults": "Aucun véhicule ne correspond à vos critères.",
   "resetFilters": "Réinitialiser les filtres",
   "viewDetails": "Voir détails"
+},
+"terms": {
+  "title": "Conditions générales",
+  "lastUpdated": "Dernière mise à jour : 1er janvier 2025",
+  "article1": {
+    "title": "1. Objet",
+    "text": "Les présentes conditions générales régissent l’utilisation des services de location de véhicules proposés par Kriagadir, société basée à Agadir, Maroc."
+  },
+  "article2": {
+    "title": "2. Réservation et confirmation",
+    "text": "Toute réservation est ferme et définitive après validation du formulaire en ligne. Un email de confirmation vous sera envoyé."
+  },
+  "article3": {
+    "title": "3. Prix et paiement",
+    "text": "Les prix indiqués sont par jour, hors assurance complémentaire. Le paiement s’effectue à la remise des clés, en espèces ou par carte bancaire."
+  },
+  "article4": {
+    "title": "4. Annulation",
+    "text": "Toute annulation doit être signalée au moins 48h avant la date de prise en charge. Passé ce délai, la caution peut être retenue."
+  },
+  "article5": {
+    "title": "5. Responsabilité",
+    "text": "Le conducteur est responsable de tout dommage causé au véhicule pendant la durée de la location. Une assurance responsabilité civile est incluse."
+  },
+  "article6": {
+    "title": "6. Litiges",
+    "text": "Tout litige sera soumis aux tribunaux compétents d’Agadir, au Maroc."
+  },
+  "contact": "Pour toute question, contactez-nous à contact@kriagadir.ma ou au +212 600 144 245."
+},
+"privacy": {
+  "title": "Politique de confidentialité",
+  "lastUpdated": "Dernière mise à jour : 1er janvier 2025",
+  "section1": {
+    "title": "Collecte des informations",
+    "text": "Nous collectons les informations que vous nous fournissez directement lors de la réservation : nom, prénom, email, téléphone, et lieu de prise en charge."
+  },
+  "section2": {
+    "title": "Utilisation des données",
+    "text": "Vos données sont utilisées uniquement pour traiter votre réservation, vous contacter et améliorer nos services. Elles ne sont jamais vendues à des tiers."
+  },
+  "section3": {
+    "title": "Sécurité",
+    "text": "Nous mettons en œuvre des mesures techniques et organisationnelles pour protéger vos données contre tout accès non autorisé."
+  },
+  "section4": {
+    "title": "Cookies",
+    "text": "Notre site utilise des cookies pour améliorer votre expérience. Vous pouvez les désactiver dans les paramètres de votre navigateur."
+  },
+  "section5": {
+    "title": "Vos droits",
+    "text": "Conformément à la loi, vous disposez d’un droit d’accès, de rectification et de suppression de vos données personnelles."
+  },
+  "contact": "Pour exercer vos droits, écrivez à dpo@kriagadir.ma"
+},
+"legal": {
+  "title": "Mentions légales",
+  "editor": {
+    "title": "Éditeur du site",
+    "text": "Kriagadir – SARL au capital de 100 000 MAD",
+    "address": "Siège social : 123, Avenue Mohammed V, Agadir, Maroc",
+    "rc": "RC : 123456 – Patente : 987654321"
+  },
+  "director": {
+    "title": "Directeur de publication",
+    "name": "Karim Benjelloun, gérant de Kriagadir"
+  },
+  "hosting": {
+    "title": "Hébergement",
+    "text": "Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis"
+  },
+  "contact": {
+    "title": "Contact"
+  },
+  "compliance": {
+    "title": "Conformité",
+    "text": "Ce site respecte la loi n° 09-08 relative à la protection des données personnelles au Maroc. Aucune déclaration à la CNDP n’est requise pour ce traitement simple."
+  },
+  "copyright": {
+    "title": "Propriété intellectuelle",
+    "text": "L’ensemble du contenu (textes, images, logos) est la propriété exclusive de Kriagadir. Toute reproduction est interdite sans autorisation préalable."
+  },
+  "jurisdiction": "Droit applicable : Droit marocain. Tribunal compétent : Agadir."
 }
 }

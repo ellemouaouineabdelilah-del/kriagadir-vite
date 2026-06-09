@@ -182,5 +182,88 @@
   "noResults": "No vehicles match your criteria.",
   "resetFilters": "Reset filters",
   "viewDetails": "View details"
+},
+"terms": {
+  "title": "Terms & Conditions",
+  "lastUpdated": "Last updated: January 1, 2025",
+  "article1": {
+    "title": "1. Purpose",
+    "text": "These general terms govern the use of vehicle rental services offered by Kriagadir, a company based in Agadir, Morocco."
+  },
+  "article2": {
+    "title": "2. Booking and confirmation",
+    "text": "Any booking is final after submitting the online form. A confirmation email will be sent to you."
+  },
+  "article3": {
+    "title": "3. Prices and payment",
+    "text": "Prices shown are per day, excluding additional insurance. Payment is made upon key handover, in cash or by credit card."
+  },
+  "article4": {
+    "title": "4. Cancellation",
+    "text": "Any cancellation must be reported at least 48 hours before the pickup date. Beyond this period, the deposit may be withheld."
+  },
+  "article5": {
+    "title": "5. Liability",
+    "text": "The driver is responsible for any damage caused to the vehicle during the rental period. Civil liability insurance is included."
+  },
+  "article6": {
+    "title": "6. Disputes",
+    "text": "Any dispute shall be submitted to the competent courts of Agadir, Morocco."
+  },
+  "contact": "For any questions, contact us at contact@kriagadir.ma or +212 600 144 245."
+},
+"privacy": {
+  "title": "Privacy Policy",
+  "lastUpdated": "Last updated: January 1, 2025",
+  "section1": {
+    "title": "Information collection",
+    "text": "We collect information you directly provide when booking: first name, last name, email, phone number, and pickup location."
+  },
+  "section2": {
+    "title": "Use of data",
+    "text": "Your data is used only to process your reservation, contact you, and improve our services. It is never sold to third parties."
+  },
+  "section3": {
+    "title": "Security",
+    "text": "We implement technical and organisational measures to protect your data from unauthorised access."
+  },
+  "section4": {
+    "title": "Cookies",
+    "text": "Our site uses cookies to improve your experience. You can disable them in your browser settings."
+  },
+  "section5": {
+    "title": "Your rights",
+    "text": "In accordance with the law, you have the right to access, rectify, and delete your personal data."
+  },
+  "contact": "To exercise your rights, write to dpo@kriagadir.ma"
+},
+"legal": {
+  "title": "Legal Notice",
+  "editor": {
+    "title": "Publisher",
+    "text": "Kriagadir – SARL with a capital of 100,000 MAD",
+    "address": "Registered office: 123, Avenue Mohammed V, Agadir, Morocco",
+    "rc": "RC: 123456 – Tax ID: 987654321"
+  },
+  "director": {
+    "title": "Publication director",
+    "name": "Karim Benjelloun, manager of Kriagadir"
+  },
+  "hosting": {
+    "title": "Hosting",
+    "text": "Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA"
+  },
+  "contact": {
+    "title": "Contact"
+  },
+  "compliance": {
+    "title": "Compliance",
+    "text": "This site complies with Moroccan law No. 09-08 on the protection of personal data. No CNDP declaration is required for this simple processing."
+  },
+  "copyright": {
+    "title": "Intellectual property",
+    "text": "All content (texts, images, logos) is the exclusive property of Kriagadir. Any reproduction is prohibited without prior authorisation."
+  },
+  "jurisdiction": "Applicable law: Moroccan law. Competent court: Agadir."
 }
 }
