@@ -17,55 +17,67 @@ import AboutUs from "./components/pages/AboutUs";
 import Navbar from "./components/pages/Navbar";
 import NotFound from "./components/pages/NotFound";
 import ScrollToTop from "./utils/ScrollToTop";
-
+import Terms from "./components/pages/Terms";
+import Privacy from "./components/pages/Privacy";
+import LegalNotice from "./components/pages/LegalNotice";
 
 function App() {
   const [selectedCar, setSelectedCar] = useState(null);
   const [showModal, setShowModal] = useState(false);
-  const [showChatWidget, setShowChatWidget] = useState(false); 
-  
-  
+  const [showChatWidget, setShowChatWidget] = useState(false);
 
   return (
     <BrowserRouter>
-    <ScrollToTop />
+      <ScrollToTop />
       <div className="App">
         <Navbar />
         <Routes>
-          <Route path="/" element={
-            <>
-              {/* Important: add the id wrappers for scrollTo to work */}
-              <div id="home"><Hero /></div>
-              <BrandSlider />
-              <HowItWorks />
-              <div id="fleet">
-                <FleetSection 
-                  setSelectedCar={setSelectedCar} 
-                  setShowModal={setShowModal} 
+          <Route
+            path="/"
+            element={
+              <>
+                {/* Important: add the id wrappers for scrollTo to work */}
+                <div id="home">
+                  <Hero />
+                </div>
+                <BrandSlider />
+                <div id="howItWork">
+                  <HowItWorks />
+                </div>
+                <div id="fleet">
+                  <FleetSection
+                    setSelectedCar={setSelectedCar}
+                    setShowModal={setShowModal}
+                  />
+                </div>
+                <BookingModal
+                  selectedCar={selectedCar}
+                  setSelectedCar={setSelectedCar}
+                  showModal={showModal}
+                  setShowModal={setShowModal}
                 />
-              </div>
-              <BookingModal 
-                selectedCar={selectedCar}
-                setSelectedCar={setSelectedCar}
-                showModal={showModal}
-                setShowModal={setShowModal}
-              />
-              <div id="contact"><ContactSection /></div>
-              <WhatsAppWidget 
-                showChatWidget={showChatWidget} 
-                setShowChatWidget={setShowChatWidget} 
-              />
-              <Footer />
-            </>
-          } />
+                <div id="contact">
+                  <ContactSection />
+                </div>
+                <WhatsAppWidget
+                  showChatWidget={showChatWidget}
+                  setShowChatWidget={setShowChatWidget}
+                />
+              </>
+            }
+          />
           <Route path="/reservation" element={<Reservation />} />
           <Route path="/car/:id" element={<CarDetail />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/cars" element={<CarsPage />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/legal" element={<LegalNotice />} />
         </Routes>
         <Toaster richColors position="top-right" />
       </div>
+      <Footer />
     </BrowserRouter>
   );
 }
