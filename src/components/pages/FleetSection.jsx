@@ -124,14 +124,14 @@ const FleetSection = ({ setSelectedCar, setShowModal }) => {
 
         {/* View more link */}
         <div className="text-center mt-14">
-          <Button
-            variant="link"
+          <Link
+            to="cars"
             className="text-orange-600 hover:text-orange-700 no-underline font-medium"
-            onClick={() => document.getElementById('fleet')?.scrollIntoView({ behavior: 'smooth' })}
+            // onClick={() => document.getElementById('fleet')?.scrollIntoView({ behavior: 'smooth' })}
           >
             {t('fleet.viewMore')}
             <span className="ml-1 transition-transform group-hover:translate-x-1 inline-block">→</span>
-          </Button>
+          </Link>
         </div>
       </div>
     </section>
