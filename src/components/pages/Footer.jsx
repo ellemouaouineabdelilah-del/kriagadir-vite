@@ -12,15 +12,15 @@ const Footer = () => {
 
   const footerLinks = {
     company: [
-      { label: t('footer.company.about'), href: '#' },
-      { label: t('footer.company.vehicles'), href: '#fleet' },
-      { label: t('footer.company.howItWorks'), href: '#' },
+      { label: t('footer.company.about'), href: '/about' },
+      { label: t('footer.company.vehicles'), href: '/cars' },
+      { label: t('footer.company.howItWorks'), href: '#howItWork' },
       { label: t('footer.company.contact'), href: '#contact' },
     ],
     legal: [
-      { label: t('footer.legal.terms'), href: '#' },
-      { label: t('footer.legal.privacy'), href: '#' },
-      { label: t('footer.legal.legalNotice'), href: '#' },
+      { label: t('footer.legal.terms'), href: '/terms' },
+      { label: t('footer.legal.privacy'), href: '/privacy' },
+      { label: t('footer.legal.legalNotice'), href: '/legal' },
     ],
   };
 
