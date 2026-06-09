@@ -112,7 +112,7 @@ function Navbar() {
   const currentLang = languages.find(l => l.code === i18n.language) || languages[0];
 
   // Pages where logo should be orange and icons dark (background transparent)
-  const isSpecialPage = ['/about', '/reservation', '/notfound', '/cars'].includes(location.pathname);
+  const isSpecialPage = ['/about', '/reservation', '/notfound', '/cars', '/legal', '/terms', "/privacy"].includes(location.pathname);
 
   // Logo colour: on special pages → orange; on homepage → white (scrolled becomes orange)
   const logoOrange = isSpecialPage || scrolled;
