@@ -83,7 +83,7 @@ const Step2 = ({ personalData, onNext, onBack }) => {
               <div>
                 <Label htmlFor="lieuLivraison">Lieu de livraison</Label>
                 <Select value={lieuLivraisonValue} onValueChange={(value) => setValue("lieuLivraison", value)}>
-                  <SelectTrigger className="mt-1">
+                  <SelectTrigger className="mt-1 w-full">
                     <SelectValue placeholder="Choisir" />
                   </SelectTrigger>
                   <SelectContent>
@@ -98,7 +98,7 @@ const Step2 = ({ personalData, onNext, onBack }) => {
               <div>
                 <Label htmlFor="lieuRecuperation">Lieu de récupération</Label>
                 <Select value={lieuRecuperationValue} onValueChange={(value) => setValue("lieuRecuperation", value)}>
-                  <SelectTrigger className="mt-1">
+                  <SelectTrigger className="mt-1 w-full">
                     <SelectValue placeholder="Choisir" />
                   </SelectTrigger>
                   <SelectContent>
