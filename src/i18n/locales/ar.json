@@ -16,6 +16,7 @@
   "search": "ابحث عن سيارة...",
   "cityNotSelected": "غير محدد",
   "whatsappMessage": "مرحباً، أرغب في استئجار سيارة في {{city}} من {{duration}}. شكراً.",
+  "pleaseSelectDates": "يرجى تحديد تاريخي الاستلام والتسليم.",
   "cities": {
     "casablanca": "الدار البيضاء",
     "marrakech": "مراكش",

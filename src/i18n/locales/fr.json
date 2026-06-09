@@ -16,6 +16,7 @@
   "search": "Rechercher une voiture...",
   "cityNotSelected": "Non sélectionnée",
   "whatsappMessage": "Bonjour, je souhaite louer une voiture à {{city}} du {{duration}}. Merci.",
+  "pleaseSelectDates": "Veuillez sélectionner les deux dates.",
   "cities": {
     "casablanca": "Casablanca",
     "marrakech": "Marrakech",

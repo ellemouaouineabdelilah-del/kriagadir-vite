@@ -16,6 +16,7 @@
   "search": "Search for a car...",
   "cityNotSelected": "Not selected",
   "whatsappMessage": "Hello, I would like to rent a car in {{city}} from {{duration}}. Thank you.",
+  "pleaseSelectDates": "Please select both pickup and drop-off dates.",
   "cities": {
     "casablanca": "Casablanca",
     "marrakech": "Marrakech",
